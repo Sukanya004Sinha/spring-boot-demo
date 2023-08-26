@@ -1,5 +1,9 @@
 server:
   port: 8083
+  spring:
+    profiles:
+    active: qa
+---
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -15,3 +19,36 @@ spring:
     show-sql: true
 welcome:
   message: Welcome to Spring boot !!
+
+---
+  spring:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      password: root
+      url: jdbc:mysql://localhost:3306/dcbapp-qa
+      username: root
+    jpa:
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL8Dialect
+      show-sql: true
+  welcome:
+    message: Welcome to Spring boot !!
+---
+    spring:
+      datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: root
+        url: jdbc:mysql://localhost:3306/dcbapp-prd
+        username: root
+      jpa:
+        hibernate:
+          ddl-auto: update
+        properties:
+          hibernate:
+            dialect: org.hibernate.dialect.MySQL8Dialect
+        show-sql: true
+    welcome:
+      message: Welcome to Spring boot !!
