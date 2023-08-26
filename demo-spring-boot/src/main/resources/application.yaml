@@ -36,6 +36,12 @@ welcome:
       show-sql: true
   welcome:
     message: Welcome to Spring boot !!
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+          
 ---
     spring:
       datasource:
